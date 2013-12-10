@@ -1,0 +1,24 @@
+Material My Material  {
+     MaterialParameters {
+	Color Color
+	Texture2D ColorMap
+	Texture2D BurnMap
+	Float Param
+     }
+
+Technique{
+	VertexShader GLSL100:  MatDefs/SimpleColor.vert
+	FragmentShader GLSL100: Matdefs/SimpleColor.frag
+
+	WorldParameters{
+	WorldViewProjectionMatrix
+	}
+	Defines{
+	COLOR : Color
+	COLORMAP : ColorMap
+	BURNMAP : BurnMap
+	PARAMS : Params
+	}
+
+     }
+}

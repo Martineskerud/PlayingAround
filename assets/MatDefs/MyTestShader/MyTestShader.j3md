@@ -1,0 +1,25 @@
+MaterialDef MyTestShader {
+
+    MaterialParameters {
+        Color Color
+        Int Time
+        Vector3 Placement
+    }
+
+    Technique {
+        VertexShader GLSL150:   MatDefs/MyTestShader/MyTestShader.vert
+        FragmentShader GLSL150: MatDefs/MyTestShader/MyTestShader.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+            WorldViewMatrix
+            Time
+        }
+
+        Defines {
+            COLOR : Color
+            TIME : Time
+        }
+    }
+
+}

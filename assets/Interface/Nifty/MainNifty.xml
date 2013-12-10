@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty>
+    <useStyles filename="nifty-default-styles.xml" />
+    <useControls filename="nifty-default-controls.xml" />
+  
+    <screen id="chat" controller="hiof.SkaalsveenEskerud.hud.ChatHud">
+        <layer childLayout="center">
+            <panel id="panel0" height="100%" width="100%" childLayout="vertical" backgroundColor="#2226" valign="bottom"> 
+                <panel width="99%" childLayout="center" padding="16px,8px" height='90%'>
+                    <text font="aurulent-sans-16.fnt" color="#f90" valign="bottom" align="left" textHAlign="left" text="${CALL.getChat()}"/> 
+                </panel>
+                <panel width="99%" childLayout="Horizontal" padding="4px,8px" height='10%'>
+                    <control id="input" name="textfield" width="100%" text="" />
+                </panel>
+            </panel>  
+        </layer>
+    </screen>
+  
+    <screen id="chatReadOnly" controller="hiof.SkaalsveenEskerud.hud.ChatHud">
+        <layer childLayout="center">
+            <panel id="panel0" height="100%" width="100%" childLayout="vertical" backgroundColor="#0000" valign="bottom"> 
+                <panel width="100%" childLayout="center" padding="16px,8px" height='90%'>
+                    <text font="aurulent-sans-16.fnt" color="#f90" valign="bottom" align="left" textHAlign="left" text="${CALL.getChat()}"/> 
+                </panel>
+            </panel>  
+        </layer>
+    </screen>
+  
+    <screen id="players" controller="hiof.SkaalsveenEskerud.hud.PlayerList">
+        <layer childLayout="center">
+            <panel id="panel0" height="50%" width="50%" childLayout="vertical" backgroundColor="#222c"> 
+                <panel width="100%" childLayout="Horizontal" padding="0px,8px">
+                    <panel id="panel1" height="24px" width="55%" childLayout="center">  
+                        <text font="aurulent-sans-16.fnt" color="#f90" valign="center" align="left" textHAlign="left" text="Players ( ${CALL.getPlayerCount()} )"/> 
+                    </panel>
+                    <panel height="24px" width="15%" childLayout="center"> 
+                        <text font="aurulent-sans-16.fnt" color="#f90" valign="center" align="left" textHAlign="left" text="Score"/> 
+                    </panel>
+                    <panel height="24px" width="15%" childLayout="center"> 
+                        <text font="aurulent-sans-16.fnt" color="#f90" valign="center" align="left" textHAlign="left" text="Deaths"/> 
+                    </panel>
+                    <panel height="24px" width="15%" childLayout="center"> 
+                        <text font="aurulent-sans-16.fnt" color="#f90" valign="center" align="left" textHAlign="left" text="Latency"/> 
+                    </panel>
+                </panel>
+                <panel height="1px" backgroundColor="#f90" width="100%"></panel>
+            
+                <panel width="100%" childLayout="Horizontal" padding="4px,8px">
+                    <panel id="panel_name" height="100%" width="55%" childLayout="center">  
+                        <text font="aurulent-sans-16.fnt" color="#ffff" valign="top" align="left" textHAlign="left" text="${CALL.getPlayers()}&#10;"/>    
+                    </panel>
+                    <panel id="panel_score" height="100%" width="15%" childLayout="center">  
+                        <text font="aurulent-sans-16.fnt" color="#ffff" valign="top" align="left" textHAlign="left" text="${CALL.getScores()}&#10;"/>    
+                    </panel>
+                    <panel id="panel_deaths" height="100%" width="15%" childLayout="center">  
+                        <text font="aurulent-sans-16.fnt" color="#ffff" valign="top" align="left" textHAlign="left" text="${CALL.getDeaths()}&#10;"/>    
+                    </panel>
+                    <panel id="panel_ping" height="100%" width="15%" childLayout="center">  
+                        <text font="aurulent-sans-16.fnt" color="#ffff" valign="top" align="left" textHAlign="left" text="${CALL.getLatencies()}&#10;"/>    
+                    </panel>
+                </panel>
+            </panel>  
+        </layer>
+    </screen>
+
+    <screen id="menu" controller="hiof.SkaalsveenEskerud.hud.Menu">
+        <layer childLayout="center">
+            <panel width="50%" height="50%" childLayout="vertical">
+        
+                <panel width="100%" childLayout="Horizontal" padding="4px,8px" backgroundColor="#f908">
+                    <control name="button" label="Quit Game" id="QuitButton" align="center" valign="center"
+                         visibleToMouse="true" hieght="100%">
+                        <interact onClick="quitGame()"/>
+                    </control>
+               
+                </panel>
+            
+                <panel height="1px" backgroundColor="#f90" width="100%"></panel> 
+            
+                <panel id="panel0" width="100%" childLayout="vertical" backgroundColor="#222c" padding="4px,8px"> 
+                
+                    <panel id="panel_info" width="100%" childLayout="vertical">  
+                        <text font="aurulent-sans-16.fnt" color="#ffff" valign="top" align="left" textHAlign="left" text="${CALL.getGeneralInfo()}&#10;"/>  
+                        <text font="aurulent-sans-16.fnt" color="#ffff" valign="top" align="left" textHAlign="left" text="${CALL.getNetworkInfo()}&#10;"/> 
+                    </panel>
+
+                </panel> 
+
+            </panel> 
+        </layer>
+    </screen>
+
+    <screen id="default" controller="hiof.SkaalsveenEskerud.hud.ChatHud">   
+    </screen>
+</nifty>

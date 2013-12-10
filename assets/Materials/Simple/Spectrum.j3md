@@ -1,0 +1,23 @@
+MaterialDef Spectrum {
+MaterialParameters {
+Float MinWavelength
+Float MaxWavelength
+Boolean Horizontal
+Boolean Reverse
+Boolean InvisibleTransparent
+}
+
+Technique {
+VertexShader GLSL100:   Materials/Simple/Spectrum.vert
+FragmentShader GLSL100: Materials/Simple/Spectrum.frag
+
+WorldParameters {
+WorldViewProjectionMatrix
+}
+
+Defines {
+HORIZONTAL : Horizontal
+REVERSE : Reverse
+INVISIBLE_TRANSPARENT : InvisibleTransparent
+}
+}
