@@ -5,7 +5,6 @@
 package hiof.SkaalsveenEskerud.world;
 
 import com.jme3.asset.AssetManager;
-import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.input.InputManager;
 import com.jme3.material.Material;
 import com.jme3.material.RenderState;
@@ -22,7 +21,6 @@ import com.jme3.scene.shape.Box;
 import com.jme3.texture.Texture;
 import hiof.SkaalsveenEskerud.Main;
 import hiof.SkaalsveenEskerud.control.ElevatorControl;
-import hiof.SkaalsveenEskerud.input.KeyMapper;
 import hiof.SkaalsveenEskerud.physics.MassFactory;
 import java.util.ArrayList;
 import hiof.SkaalsveenEskerud.world.model.util.MaterialDistributor;
